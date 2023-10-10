@@ -2,8 +2,8 @@ package com.neotica.myretrofit.data.local
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.neotica.myretrofit.data.network.ktor.KtorService
 import com.neotica.myretrofit.data.network.response.CharacterResponse
-import com.neotica.myretrofit.data.network.retrofit.ApiConfig
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -19,6 +19,7 @@ class MainViewModel : ViewModel() {
     }
 
     private suspend fun getChar(): List<CharacterResponse> {
-        return ApiConfig.create().getCharacters().results
+        return KtorService.getCharacters().results
+       // return ApiConfig.create().getCharacters().results
     }
 }

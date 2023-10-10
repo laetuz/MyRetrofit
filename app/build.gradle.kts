@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("kotlinx-serialization")
 }
 
 android {
@@ -72,6 +73,12 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+    //Ktor
+    implementation("io.ktor:ktor-client-okhttp:1.6.6")
+    implementation("io.ktor:ktor-client-json:1.6.6")
+    implementation("io.ktor:ktor-client-serialization-jvm:1.6.6")
+    implementation("io.ktor:ktor-client-logging-jvm:1.6.6")
+
     //Coil
     implementation("io.coil-kt:coil-compose:2.3.0")
 }
